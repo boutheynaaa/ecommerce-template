@@ -1,0 +1,38 @@
+
+# Dependencies
+node_modules/
+.pnp.*
+.yarn/*
+
+# Environment variables and secrets
+.env*
+!.env.example
+!.env.*.example
+
+# Next.js and build outputs
+.next/
+out/
+build/
+dist/
+
+# Testing and coverage
+coverage/
+playwright-report/
+test-results/
+
+# Logs and debug files
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Local tooling
+.turbo/
+.vercel/
+
+# Operating system
+.DS_Store
+Thumbs.db

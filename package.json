@@ -1,0 +1,26 @@
+{
+  "name": "ecommerce-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "dev:web": "pnpm --filter web dev",
+  "dev:api": "pnpm --filter api dev",
+  "build:web": "pnpm --filter web build",
+  "typecheck": "pnpm --filter api typecheck",
+  "test": "pnpm --filter api test"
+ },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.14.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.14.0",
+  "type": "module",
+  "private": true
+}
