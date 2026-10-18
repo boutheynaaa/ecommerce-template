@@ -3,6 +3,7 @@ import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   test: {
+    exclude: ["**/node_modules/**", "**/dist/**"],
     env: {
       NODE_ENV: "test",
       PORT: "4000",

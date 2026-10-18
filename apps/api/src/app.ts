@@ -4,8 +4,16 @@ import type { NextFunction, Request, Response } from "express";
 import helmet from "helmet";
 import cors from "cors";
 import { env } from "./config/env.js";
+import {
+  createStoreRouter,
+  type StoreConfigService,
+} from "./modules/store/store.routes.js";
 
-export function createApp() {
+interface AppDependencies {
+  storeSettings?: StoreConfigService;
+}
+
+export function createApp(dependencies: AppDependencies = {}) {
   const app = express();
 
   app.disable("x-powered-by");
@@ -16,6 +24,11 @@ export function createApp() {
   app.get("/api/health", (_req: Request, res: Response) => {
     res.json({ status: "ok" });
   });
+
+  app.use(
+    "/api/store",
+    createStoreRouter(dependencies.storeSettings),
+  );
 
   app.use((_req: Request, res: Response) => {
     res.status(404).json({
